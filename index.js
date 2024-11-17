@@ -4,6 +4,7 @@ fs.writeFileSync(output, JSON.stringify(result, null, 2));
 } catch (err) {
 console.error('Error writing to output file:', err); process.exit(1);
 }
+
 }
 program
 .requiredOption('-i, --input <file>')
@@ -23,6 +24,7 @@ records.forEach(record => {
 if (record.txt === "Доходи, усього" || record.txt === "Витрати, усього") { formattedResults[record.txt] = record.value;
 }
 });
+
 result = formattedResults;
 } catch (err) {
 console.error('Error reading or parsing input file:', err); process.exit(1);
